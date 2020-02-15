@@ -1,5 +1,7 @@
 # API-2
 
+[MY NEW FAVICON GENERATOR](https://realfavicongenerator.net/)
+
 *ATTENTION:* go to mongoose website and see the starter code they have
 to hopefully fix the issue of soon-to-be depricated mongoose
 (see terminal error output bellow -- not error, but warning, really).
