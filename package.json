@@ -1,19 +1,24 @@
 {
-  "name": "utulsa-tips",
+  "name": "api-2",
   "version": "1.0.0",
-  "description": "",
+  "description": "api tutorial following along with academind",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nikitazdvijkov/utulsa-tips.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-start": "nodemon server.js",
+    "dev-start-heroku": "heroku local web",
+    "deploy": "git add -A && git commit && git push heroku master",
+    "readme": "pandoc README.md -s -o README.html && open README.html"
   },
   "author": "Nikita Zdvijkov",
   "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/nikitazdvijkov/utulsa-tips/issues"
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.11",
+    "morgan": "^1.9.1"
   },
-  "homepage": "https://github.com/nikitazdvijkov/utulsa-tips#readme"
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }
