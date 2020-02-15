@@ -11,6 +11,8 @@ mongoose.connect('mongodb+srv://nik3ta:HELLOnik3ta@cluster0-9dbij.mongodb.net/te
 const productRoutes = require('./api/routes/products'); // dot js file extension implicit
 const orderRoutes = require('./api/routes/orders');
 
+const tipRoutes = require('./api/routes/tips');
+
 // middleware
 // morgan somehow works with NEXT function (see products.js) to log requests to stdout
 app.use(morgan('dev'));
@@ -50,6 +52,8 @@ second arg : use to process requests that pass thru filter
 // middleware that forwards requests to appropriate js files 
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
+
+app.use('/tips', tipRoutes);
 
 /*
 if script has made it to this line that means that the previous two 

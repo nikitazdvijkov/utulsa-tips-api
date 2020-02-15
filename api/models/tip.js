@@ -10,7 +10,7 @@ const productSchema = mongoose.Schema({
     // mindfuck
     _id: mongoose.Schema.Types.ObjectId, // underscore by convention
     alias: String,
-    body: String,
+    advice: String,
     timestamp: Date,
     tags: [String],
     live: Boolean
