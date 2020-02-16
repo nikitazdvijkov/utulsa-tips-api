@@ -1,8 +1,17 @@
-const http = require('http');
-const app = require('./app');
+require('dotenv').config()
 
-const port = process.env.PORT || 3000;
+const express = require('express')
+const app = express()
+const mongoose = require('mongoose')
 
-const server = http.createServer(app);
+mongoose.connect('mongodb+srv://nik3ta:HELLOnik3ta@cluster0-9dbij.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true })
+const db = mongoose.connection
+db.on('error', (error) => console.error(error))
+db.once('open', () => console.log('Connected to Database'))
 
-server.listen(port);
+app.use(express.json())
+
+const subscribersRouter = require('./routes/subscribers')
+app.use('/subscribers', subscribersRouter)
+
+app.listen(3000, () => console.log('Server Started'))
