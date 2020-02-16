@@ -12,6 +12,7 @@ const productRoutes = require('./api/routes/products'); // dot js file extension
 const orderRoutes = require('./api/routes/orders');
 
 const tipRoutes = require('./api/routes/tips');
+const adminRoutes = require('./api/routes/nepeykozlenchikomstanish');
 
 // middleware
 // morgan somehow works with NEXT function (see products.js) to log requests to stdout
@@ -21,7 +22,7 @@ app.use(bodyParser.urlencoded({extended: false})); // pass in object to configur
 app.use(bodyParser.json());
 
 // include some more middleware before routes
-// adds CORS-enabling headers
+// adds CORS-enabling header
 // does not send response, only modifies it
 app.use((req, res, next) => {
     // first argument is header name, second arg is value
@@ -55,6 +56,8 @@ app.use('/orders', orderRoutes);
 
 app.use('/tips', tipRoutes);
 
+app.use('/nepeykozlenchikomstanish', adminRoutes);
+
 /*
 if script has made it to this line that means that the previous two 
 (productRoutes and orderRoutes) were not triggered
@@ -79,5 +82,5 @@ app.use((error, req, res, next) => {
         }
     });
 });
- 
+
 module.exports = app;

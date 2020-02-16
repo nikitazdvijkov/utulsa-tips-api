@@ -235,3 +235,63 @@ response (note: square brackets make it an array):
 Run `npm run dev-start`. Re-added morgan logging.
 - figure out how to connect git to heroku so heroku auto-deploys on update like netlify
 - running `heroku local web` deploys app to `localhost:5000`
+
+removed this chunk of code from tips.js to de-privelege:
+
+```javascript
+router.patch('/:tipId', (req, res, next) => {
+    let patchServerSideTimestamp = new Date();
+    const id = req.params.tipId;
+    Tip.update(
+        { _id: id }, 
+        { 
+            $set: {
+                alias: req.body.newAlias,
+                tipContent: req.body.newTipContent,
+                tags: req.body.newTags,
+                timestamp: patchServerSideTimestamp,
+                isLive: req.body.newIsLive
+            }
+        })
+            .exec()
+            .then(result => {
+                console.log(res);
+                res.status(200).json(result);
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json({error: err})
+            });
+    // ops stands for operations
+    // see alternative, that goes through and checks if the ops need changing
+    // and only changes the ones that do instead of all in a patch req
+    /*
+    ahhh fuck it i dont need this
+    go to timestamp 
+    31:30
+    on video title 
+    MongoDB and Mongoose | Creating a REST API with Node.js
+    video url
+    https://youtu.be/WDrU305J1yw
+    to get the code
+    Product.update(
+        { _id: id }, 
+        { 
+            $set: updateOps
+        });
+    */
+});
+router.delete('/:tipId', (req, res, next) => {
+    id = req.params.tipId;
+    // dont have to pass whole object to remove, just filter criteria -- means remove any object in db that fits criteria
+    Tip.remove({_id: id})
+        .exec()
+        .then(result => {
+            res.status(200).json(result);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({error: err}); // error object we got from mongoose 
+        }); 
+});
+```
