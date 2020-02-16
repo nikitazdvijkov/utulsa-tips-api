@@ -6,7 +6,7 @@ POST http://localhost:3000/tips
 Content-Type: application/json
 
 {
-	"alias": "WASAO WASAP",
+	"alias": "KKAAPPAA WASAO WASAP",
     "tipContent": "another sample tip content",
     "tags": ["$$$", "School"],
     "isLive": "false"
@@ -18,11 +18,11 @@ GET http://localhost:3000/tips/5e48cb66030eeb1d96b2069c
 
 ###
 
-DELETE http://localhost:3000/tips/5e48cb66030eeb1d96b2069c
+DELETE http://localhost:3000/tips/5e489d3d7ab561165606d620
 
 ###
 
-PATCH http://localhost:3000/tips/5e48cb66030eeb1d96b2069c
+PATCH http://localhost:3000/tips/5e489d3d7ab561165606d620
 Content-Type: application/json
 
 {

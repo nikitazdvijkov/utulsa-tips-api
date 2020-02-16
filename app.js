@@ -8,8 +8,8 @@ mongoose.connect('mongodb+srv://nik3ta:HELLOnik3ta@cluster0-9dbij.mongodb.net/te
 {useMongoClient: true}); // causes mongodb client to be used under the hood
 // mongoose.connect('mongodb+srv://nik3ta:' + process.env.MONGO_ATLAS_PW + '@cluster0-9dbij.mongodb.net/test?retryWrites=true&w=majority') // to make with environment variable
 
-const productRoutes = require('./api/routes/products'); // dot js file extension implicit
-const orderRoutes = require('./api/routes/orders');
+// const productRoutes = require('./api/routes/products'); // dot js file extension implicit
+// const orderRoutes = require('./api/routes/orders');
 
 const tipRoutes = require('./api/routes/tips');
 const adminRoutes = require('./api/routes/nepeykozlenchikomstanish');
@@ -51,8 +51,10 @@ first arg : filter - any request that starts with '/products'
 second arg : use to process requests that pass thru filter
 */
 // middleware that forwards requests to appropriate js files 
-app.use('/products', productRoutes);
-app.use('/orders', orderRoutes);
+
+
+// app.use('/products', productRoutes);
+// app.use('/orders', orderRoutes);
 
 app.use('/tips', tipRoutes);
 

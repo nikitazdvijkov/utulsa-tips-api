@@ -16,7 +16,7 @@ GET http://localhost:3000/products/
 
 ###
 
-DELETE http://localhost:3000/products/5e48a6442295d918a5dac667
+DELETE http://localhost:3000/products/5e4224a90b64c100179a2e5c
 
 ###
 

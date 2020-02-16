@@ -6,7 +6,7 @@ POST http://localhost:3000/nepeykozlenchikomstanish
 Content-Type: application/json
 
 {
-	"alias": "SKEEEYAAA skrrrra papapap skidikeeee",
+	"alias": "HHHHHHHH SKEEEYAAA skrrrra papapap skidikeeee",
     "tipContent": "poom boom koo quoo",
     "tags": ["$$$", "School", "Orgs"],
     "isLive": "false"
@@ -22,11 +22,11 @@ DELETE http://localhost:3000/nepeykozlenchikomstanish/5e48ca8a030eeb1d96b2069a
 
 ###
 
-PATCH http://localhost:3000/nepeykozlenchikomstanish/5e48ca8a030eeb1d96b2069a
+PATCH http://localhost:3000/nepeykozlenchikomstanish/5e48ce3350e3721ebaec3a4c
 Content-Type: application/json
 
 {
-	"newAlias": "yeaya ya don now",
+	"newAlias": "OOFFAAALALA ya don now",
     "newTipContent": "hop out da fo do with a fo fo poppin one to free and fo",
     "newTags": ["$$$", "School"],
     "newIsLive": "true"
