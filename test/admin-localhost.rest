@@ -1,0 +1,33 @@
+GET http://localhost:3000/nepeykozlenchikomstanish
+
+###
+
+POST http://localhost:3000/nepeykozlenchikomstanish
+Content-Type: application/json
+
+{
+	"alias": "SKEEEYAAA skrrrra papapap skidikeeee",
+    "tipContent": "poom boom koo quoo",
+    "tags": ["$$$", "School", "Orgs"],
+    "isLive": "false"
+}
+
+###
+
+GET http://localhost:3000/nepeykozlenchikomstanish/5e48ca8a030eeb1d96b2069a
+
+###
+
+DELETE http://localhost:3000/nepeykozlenchikomstanish/5e48ca8a030eeb1d96b2069a
+
+###
+
+PATCH http://localhost:3000/nepeykozlenchikomstanish/5e48ca8a030eeb1d96b2069a
+Content-Type: application/json
+
+{
+	"newAlias": "yeaya ya don now",
+    "newTipContent": "hop out da fo do with a fo fo poppin one to free and fo",
+    "newTags": ["$$$", "School"],
+    "newIsLive": "true"
+}
