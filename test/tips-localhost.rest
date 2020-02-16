@@ -6,10 +6,9 @@ POST http://localhost:3000/tips
 Content-Type: application/json
 
 {
-	"alias": "KKAAPPAA WASAO WASAP",
+	"alias": "ANOTHER SUNDAY POST WASAO WASAP",
     "tipContent": "another sample tip content",
-    "tags": ["$$$", "School"],
-    "isLive": "false"
+    "tags": ["$$$", "School"]
 }
 
 ###

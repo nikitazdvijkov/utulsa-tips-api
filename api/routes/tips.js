@@ -11,7 +11,7 @@ router.get('/', (req, res, next) => {
     // QUERY OPERATORS:
     // can do WHERE to filter
     // can do LIMIT to limit quantity of responses, perhaps to implement pagination
-    Tip.find()
+    Tip.find({ isLive: true })
         .exec()
         .then(docs => {
             console.log(docs);
@@ -32,7 +32,7 @@ router.post('/', (req, res, next) => {
         tipContent: req.body.tipContent,
         timestamp: postServerSideTimestamp,
         tags: req.body.tags,
-        isLive: req.body.isLive
+        isLive: false
     });
     // save is a mongoose method that can be used on mongoose models for storing in database
     // don't want to use call back (arrow function
