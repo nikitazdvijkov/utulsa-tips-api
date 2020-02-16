@@ -18,7 +18,7 @@ GET http://localhost:3000/tips/5e489d9d7ab561165606d621
 
 ###
 
-DELETE http://localhost:3000/tips/5e489d9d7ab561165606d621
+DELETE http://localhost:3000/tips/5e489fb43edcd416d6487b74
 
 ###
 

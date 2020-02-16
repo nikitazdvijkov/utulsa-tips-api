@@ -6,29 +6,29 @@ POST http://utulsa-tips-api.herokuapp.com/tips
 Content-Type: application/json
 
 {
-	"alias": "Schnitzel",
-    "tipContent": "vas is guuut ya",
-    "tags": ["$$$", "School"],
-    "isLive": "false"
+	"alias": "UNMISTAKEABLE",
+    "tipContent": "UNMISTAKEABLE CONTENT",
+    "tags": ["$$$", "School", "Fun"],
+    "isLive": "true"
 }
 
 ###
 
-GET http://utulsa-tips-api.herokuapp.com/tips/5e489d9d7ab561165606d621
+GET http://utulsa-tips-api.herokuapp.com/tips/5e48aae82b271900179a9702
 
 ###
 
-DELETE http://utulsa-tips-api.herokuapp.com/tips/5e489d9d7ab561165606d621
+DELETE http://utulsa-tips-api.herokuapp.com/tips/5e48aae82b271900179a9702
 
 ###
 
-PATCH http://utulsa-tips-api.herokuapp.com/tips/5e489fb43edcd416d6487b74
+PATCH http://utulsa-tips-api.herokuapp.com/tips/5e48aae82b271900179a9702
 Content-Type: application/json
 
 {
-	"alias": "Anonymous",
-    "newTipContent": "YET AGAIN UPDATED tip content",
+	"alias": "UPDATED UNMISTAKEABLE",
+    "newTipContent": "UNMISTAKABLY EDITED",
     "newTags": ["$$$", "Fun"],
-    "newIsLive": "true"
+    "newIsLive": "false"
 }
 
