@@ -1,19 +1,24 @@
 {
-  "name": "current-project",
+  "name": "api-2",
   "version": "1.0.0",
-  "description": "",
+  "description": "api tutorial following along with academind",
   "main": "index.js",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-start": "nodemon server.js",
+    "dev-start-heroku": "heroku local web",
+    "deploy": "git add -A && git commit && git push heroku master",
+    "readme": "pandoc README.md -s -o README.html && open README.html"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Nikita Zdvijkov",
+  "license": "UNLICENSED",
   "dependencies": {
-    "express": "^4.16.4",
-    "mongoose": "^5.5.7"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.11",
+    "morgan": "^1.9.1"
   },
   "devDependencies": {
-    "dotenv": "^8.0.0",
-    "nodemon": "^1.19.0"
+    "nodemon": "^2.0.2"
   }
 }
