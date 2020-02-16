@@ -78,7 +78,7 @@ router.get('/:tipId', (req, res, next) => {
 });
 router.patch('/:tipId', (req, res, next) => {
     const id = req.params.tipId;
-    Product.update(
+    Tip.update(
         { _id: id }, 
         { 
             $set: {

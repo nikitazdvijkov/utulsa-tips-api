@@ -1,0 +1,30 @@
+GET http://localhost:3000/products
+
+###
+
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+	"name": "alsdkfjasdkf",
+    "price": "8498398"
+}
+
+###
+
+GET http://localhost:3000/products/
+
+###
+
+DELETE http://localhost:3000/products/
+
+###
+
+PATCH http://localhost:3000/products/
+Content-Type: application/json
+
+{
+	"name": "UPDATED alsdkfjasdkf",
+    "price": "1111111"
+}
+
