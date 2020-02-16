@@ -25,11 +25,12 @@ router.get('/', (req, res, next) => {
 
 // POST
 router.post('/', (req, res, next) => {
+    serverSideTimestamp = new Date();
     const tip = new Tip({
         _id: new mongoose.Types.ObjectId(), // serves as constructor
         alias: req.body.alias,
         tipContent: req.body.tipContent,
-        timestamp: req.body.timestamp,
+        timestamp: serverSideTimestamp,
         tags: req.body.tags,
         isLive: req.body.isLive
     });
