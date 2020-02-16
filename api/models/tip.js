@@ -6,7 +6,7 @@ const tipSchema = mongoose.Schema({
     tipContent: String,
     timestamp: Date,
     tags: [String],
-    live: Boolean
+    isLive: Boolean
 });
 
 module.exports = mongoose.model('Tip', tipSchema);

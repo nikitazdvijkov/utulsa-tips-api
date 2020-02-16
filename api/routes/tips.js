@@ -31,18 +31,18 @@ router.post('/', (req, res, next) => {
         tipContent: req.body.tipContent,
         timestamp: req.body.timestamp,
         tags: req.body.tags,
-        live: req.body.live
+        isLive: req.body.isLive
     });
     // save is a mongoose method that can be used on mongoose models for storing in database
     // don't want to use call back (arrow function
     // dont want to chain .exec() to make it a promise
     // instead want to make promise using THEN
-    product.save().then(result => {
+    tip.save().then(result => {
         console.log(result);
         // moved where this was to within success callback
         res.status(201).json({ // status codes: 200-OK, 201-created
-            message: 'Handling POST requests to /products',
-            createdProduct: product
+            message: 'Handling POST requests to /tips',
+            createdTip: tip
         });
     })
     .catch(err => {
@@ -52,9 +52,9 @@ router.post('/', (req, res, next) => {
 });
 
 // PARAMETERS demo
-router.get('/:productId', (req, res, next) => {
-    const id = req.params.productId;
-    Product.findById(id)
+router.get('/:tipId', (req, res, next) => {
+    const id = req.params.tipId;
+    Tip.findById(id)
         .exec()
         .then(doc => {
             console.log(doc);
@@ -75,14 +75,17 @@ router.get('/:productId', (req, res, next) => {
     // code that i write on this line will not wait for code above exec then catch - to finish
     // solution: send from then block
 });
-router.patch('/:productId', (req, res, next) => {
-    const id = req.params.productId;
+router.patch('/:tipId', (req, res, next) => {
+    const id = req.params.tipId;
     Product.update(
         { _id: id }, 
         { 
             $set: {
-                name: req.body.newName,
-                price: req.body.newPrice
+                alias: req.body.newAlias,
+                tipContent: req.body.newTipContent,
+                timestamp: req.body.newTimestamp,
+                tags: req.body.newTags,
+                isLive: req.body.newIsLive
             }
         })
             .exec()
@@ -113,10 +116,10 @@ router.patch('/:productId', (req, res, next) => {
         });
     */
 });
-router.delete('/:productId', (req, res, next) => {
-    id = req.params.productId;
+router.delete('/:tipId', (req, res, next) => {
+    id = req.params.tipId;
     // dont have to pass whole object to remove, just filter criteria -- means remove any object in db that fits criteria
-    Product.remove({_id: id})
+    Tip.remove({_id: id})
         .exec()
         .then(result => {
             res.status(200).json(result);
