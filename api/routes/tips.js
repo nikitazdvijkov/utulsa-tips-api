@@ -25,12 +25,12 @@ router.get('/', (req, res, next) => {
 
 // POST
 router.post('/', (req, res, next) => {
-    serverSideTimestamp = new Date();
+    let postServerSideTimestamp = new Date();
     const tip = new Tip({
         _id: new mongoose.Types.ObjectId(), // serves as constructor
         alias: req.body.alias,
         tipContent: req.body.tipContent,
-        timestamp: serverSideTimestamp,
+        timestamp: postServerSideTimestamp,
         tags: req.body.tags,
         isLive: req.body.isLive
     });
@@ -77,6 +77,7 @@ router.get('/:tipId', (req, res, next) => {
     // solution: send from then block
 });
 router.patch('/:tipId', (req, res, next) => {
+    let patchServerSideTimestamp = new Date();
     const id = req.params.tipId;
     Tip.update(
         { _id: id }, 
@@ -84,8 +85,8 @@ router.patch('/:tipId', (req, res, next) => {
             $set: {
                 alias: req.body.newAlias,
                 tipContent: req.body.newTipContent,
-                timestamp: req.body.newTimestamp,
                 tags: req.body.newTags,
+                timestamp: patchServerSideTimestamp,
                 isLive: req.body.newIsLive
             }
         })

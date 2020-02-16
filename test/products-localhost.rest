@@ -16,15 +16,14 @@ GET http://localhost:3000/products/
 
 ###
 
-DELETE http://localhost:3000/products/
+DELETE http://localhost:3000/products/5e48a6442295d918a5dac667
 
 ###
 
-PATCH http://localhost:3000/products/
+PATCH http://localhost:3000/products/5e48a6442295d918a5dac667
 Content-Type: application/json
 
 {
-	"name": "UPDATED alsdkfjasdkf",
-    "price": "1111111"
+	"newName": "UPDATED alsdkfjasdkf",
+    "newPrice": "1111111"
 }
-

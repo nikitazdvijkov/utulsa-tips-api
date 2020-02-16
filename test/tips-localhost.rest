@@ -8,7 +8,7 @@ Content-Type: application/json
 {
 	"alias": "Anonymous",
     "tipContent": "another sample tip content",
-    "tags": ["$$$", "Fun"],
+    "tags": ["$$$", "School"],
     "isLive": "false"
 }
 
@@ -26,9 +26,8 @@ PATCH http://localhost:3000/tips/5e489fb43edcd416d6487b74
 Content-Type: application/json
 
 {
-	"alias": "Anonymous",
-    "newTipContent": "YET AGAIN UPDATED tip content",
-    "newTags": ["$$$", "Fun"],
+	"newAlias": "Anonymous",
+    "newTipContent": "OK SO THIS TIME IT HAS TO WORK tip content",
+    "newTags": ["$$$", "School"],
     "newIsLive": "true"
 }
-
