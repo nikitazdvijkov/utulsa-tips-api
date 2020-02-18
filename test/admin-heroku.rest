@@ -1,0 +1,33 @@
+GET http://utulsa-tips-api.herokuapp.com/nepeykozlenchikomstanish
+
+###
+
+POST http://utulsa-tips-api.herokuapp.com/nepeykozlenchikomstanish
+Content-Type: application/json
+
+{
+	"alias": "HHHHHHHH SKEEEYAAA skrrrra papapap skidikeeee",
+    "tipContent": "poom boom koo quoo",
+    "tags": ["$$$", "School", "Orgs"],
+    "isLive": "false"
+}
+
+###
+
+GET http://utulsa-tips-api.herokuapp.com/nepeykozlenchikomstanish/5e48ca8a030eeb1d96b2069a
+
+###
+
+DELETE http://utulsa-tips-api.herokuapp.com/nepeykozlenchikomstanish/5e48ca8a030eeb1d96b2069a
+
+###
+
+PATCH http://utulsa-tips-api.herokuapp.com/nepeykozlenchikomstanish/5e4a0c647c70e00017cc8e79
+Content-Type: application/json
+
+{
+	"newAlias": "OOFFAAALALA ya don now",
+    "newTipContent": "hop out da fo do with a fo fo poppin one to free and fo",
+    "newTags": ["money", "school", "fun"],
+    "newIsLive": "true"
+}

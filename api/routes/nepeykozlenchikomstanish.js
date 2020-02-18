@@ -80,6 +80,11 @@ router.get('/:tipId', (req, res, next) => {
 });
 router.patch('/:tipId', (req, res, next) => {
     let patchServerSideTimestamp = new Date();
+    if (req.body.newTimestamp != null) {
+        patchServerSideTimestamp = req.body.newTimestamp;
+    } else {
+        let patchServerSideTimestamp = new Date();
+    }
     const id = req.params.tipId;
     Tip.update(
         { _id: id }, 
