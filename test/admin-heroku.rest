@@ -6,8 +6,8 @@ POST http://utulsa-tips-api.herokuapp.com/nepeykozlenchikomstanish
 Content-Type: application/json
 
 {
-	"alias": "HHHHHHHH SKEEEYAAA skrrrra papapap skidikeeee",
-    "tipContent": "poom boom koo quoo",
+	"alias": "someone",
+    "tipContent": "do this do that",
     "tags": ["$$$", "School", "Orgs"],
     "isLive": "false"
 }
@@ -26,8 +26,8 @@ PATCH http://utulsa-tips-api.herokuapp.com/nepeykozlenchikomstanish/5e4a0c647c70
 Content-Type: application/json
 
 {
-	"newAlias": "OOFFAAALALA ya don now",
-    "newTipContent": "hop out da fo do with a fo fo poppin one to free and fo",
+	"newAlias": "anybody",
+    "newTipContent": "this is my advice",
     "newTags": ["money", "school", "fun"],
     "newIsLive": "true"
 }

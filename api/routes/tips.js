@@ -2,10 +2,11 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
+
 const Tip = require('../models/tip'); // import product model
 
-// use simply '/' in router bc anything sent to product.js already has /products in url
-// general get method for returning all products
+
+// GET ALL
 router.get('/', (req, res, next) => {
     // if no arg in find, it returns all
     // QUERY OPERATORS:
@@ -22,6 +23,7 @@ router.get('/', (req, res, next) => {
             res.status(500).json({error: err});
         });
 }); 
+
 
 // POST
 router.post('/', (req, res, next) => {
@@ -49,10 +51,12 @@ router.post('/', (req, res, next) => {
     .catch(err => {
         console.log(err);
         res.status(500).json({error: err});
-    }); // chain error catching on as well
+    });
 });
 
-// PARAMETERS demo
+
+/* not required for website to function
+// GET BY ID
 router.get('/:tipId', (req, res, next) => {
     const id = req.params.tipId;
     Tip.findById(id)
@@ -76,7 +80,10 @@ router.get('/:tipId', (req, res, next) => {
     // code that i write on this line will not wait for code above exec then catch - to finish
     // solution: send from then block
 });
+*/
+
 
 // deleted patch and delete functionality
 
-module.exports = router; // router as configured above is exported and can be used in other  files, e.g. in app.js -- see where we import using require()
+
+module.exports = router;

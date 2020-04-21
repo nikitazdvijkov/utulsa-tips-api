@@ -8,7 +8,7 @@
     "dev-start": "nodemon server.js",
     "dev-start-heroku": "heroku local web",
     "deploy": "git add -A && git commit && git push heroku master",
-    "readme": "pandoc README.md -s -o README.html && open README.html"
+    "md-to-html": "pandoc README.md -s -o README.html && open README.html"
   },
   "author": "Nikita Zdvijkov",
   "license": "UNLICENSED",
