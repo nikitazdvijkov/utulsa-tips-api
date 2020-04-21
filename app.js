@@ -9,7 +9,7 @@ mongoose.connect('mongodb+srv://nik3ta:' + process.env.MONGO_ATLAS_PW + '@cluste
 // mongoose.connect('mongodb+srv://nik3ta:' + process.env.MONGO_ATLAS_PW + '@cluster0-9dbij.mongodb.net/test?retryWrites=true&w=majority') // to make with environment variable
 
 const tipRoutes = require('./api/routes/tips');
-const adminRoutes = require('./api/routes/nepeykozlenchikomstanish');
+const adminRoutes = require('./api/routes/admin');
 
 // middleware
 // morgan somehow works with NEXT function to log requests to stdout
@@ -51,7 +51,7 @@ second arg : use to process requests that pass thru filter
 
 app.use('/tips', tipRoutes);
 
-app.use('/nepeykozlenchikomstanish', adminRoutes);
+app.use(process.env.ADMIN_ENDPOINT, adminRoutes);
 
 /*
 if script has made it to this line that means that previous were not triggered
