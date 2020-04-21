@@ -1,29 +1,20 @@
-# [utulsa.tips](https://utulsa.tips) README
+# UTulsa.Tips REST API backend
 
-This README is also available in the repo in HTML form – see `README.html`.
+by Nikita Zdvijkov
 
-The `NOTES.md` file (and its `NOTES.html` counterpart) are my own miscellaneous and poorly organized development notes.
+[utulsa.tips](https://utulsa.tips)
 
-Below, I explain some potentially confusing aspects of the repo...
+## Security
 
-## What is the meaning of `nepeykozlenchikomstanish`?
+The public API endpoint is at `http://utulsa-tips-api.herokuapp.com/tips/`.
+Unprivileged users can only perform the actions described by the file `/api/routes/tips.js`.
 
-This is a secret admin API endpoint.
-The idea is that only the admin knows that the obscure URL
-`http://utulsa-tips-api.herokuapp.com/nepeykozlenchikomstanish/` even exists.
-The public endpoint is at `http://utulsa-tips-api.herokuapp.com/tips/`.
-It's obviously far from ideal,
-but it's an easy temporary fix.
+The admin endpoint is at a secret URL specified by `process.env.ADMIN_ENDPOINT`, 
+a config var set through the Heroku dashboard.
+Admin can perform actions described by the file `/api/routes/admin.js`.
 
-## `test` directory and `.rest` files
+## `TEST.rest` file
 
-I used to use Postman for API testing, 
-then I found a simpler way: 
-the "Rest Client" extension for Visual Studio Code.
-The `.rest` files integrate with that extension.
-The `.rest` files are separated according to whether
-they target my localhost dev server or the public heroku deployment,
-as well as according to whether
-they target the public or admin endpoints of the API.
-
-– Nikita Zdvijkov
+Install "Rest Client" extension for Visual Studio Code
+in order to use the `TEST.rest` file.
+It's an alternative to [Postman](https://www.postman.com/).

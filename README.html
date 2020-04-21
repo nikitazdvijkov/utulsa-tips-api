@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="utulsa.tips-rest-api-backend">UTulsa.Tips REST API backend</h1>
+<p>by Nikita Zdvijkov</p>
+<p><a href="https://utulsa.tips">utulsa.tips</a></p>
+<h2 id="security">Security</h2>
+<p>The public API endpoint is at <code>http://utulsa-tips-api.herokuapp.com/tips/</code>. Unprivileged users can only perform the actions described by the file <code>/api/routes/tips.js</code>.</p>
+<p>The admin endpoint is at a secret URL specified by <code>process.env.ADMIN_ENDPOINT</code>, a config var set through the Heroku dashboard. Admin can perform actions described by the file <code>/api/routes/admin.js</code>.</p>
+<h2 id="test.rest-file"><code>TEST.rest</code> file</h2>
+<p>Install “Rest Client” extension for Visual Studio Code in order to use the <code>TEST.rest</code> file. It’s an alternative to <a href="https://www.postman.com/">Postman</a>.</p>
+</body>
+</html>

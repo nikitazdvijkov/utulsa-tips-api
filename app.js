@@ -1,22 +1,26 @@
-const express = require('express'); // import express
+const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser'); 
 const mongoose = require('mongoose');
 
+
 mongoose.connect('mongodb+srv://nik3ta:' + process.env.MONGO_ATLAS_PW + '@cluster0-9dbij.mongodb.net/test?retryWrites=true&w=majority', 
 {useMongoClient: true}); // causes mongodb client to be used under the hood
-// mongoose.connect('mongodb+srv://nik3ta:' + process.env.MONGO_ATLAS_PW + '@cluster0-9dbij.mongodb.net/test?retryWrites=true&w=majority') // to make with environment variable
+
 
 const tipRoutes = require('./api/routes/tips');
 const adminRoutes = require('./api/routes/admin');
+
 
 // middleware
 // morgan somehow works with NEXT function to log requests to stdout
 app.use(morgan('dev'));
 
+
 app.use(bodyParser.urlencoded({extended: false})); // pass in object to configure behavior of url parser: will not accept 'extended' - more complex data whatever that means
 app.use(bodyParser.json());
+
 
 // include some more middleware before routes
 // adds CORS-enabling header
@@ -42,6 +46,7 @@ app.use((req, res, next) => {
     next(); // how does this next thing work???
 });
 
+
 /* 
 app.use : middleware that every request is funneled through
 first arg : filter - any request that starts with '/tips'
@@ -53,6 +58,7 @@ app.use('/tips', tipRoutes);
 
 app.use('/' + process.env.ADMIN_ENDPOINT, adminRoutes);
 
+
 /*
 if script has made it to this line that means that previous were not triggered
 because requested URL did not match endpoints
@@ -62,6 +68,7 @@ app.use((req, res, next) => {
     error.status = 404; // if assigned with parens as METHOD error.status(400) WILL NOT WORK
     next(error)
 });
+
 
 /*
 this will catch ANY error in the application
@@ -75,5 +82,6 @@ app.use((error, req, res, next) => {
         }
     });
 });
+
 
 module.exports = app;
