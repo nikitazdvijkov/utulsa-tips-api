@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser'); 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://nik3ta:HELLOnik3ta@cluster0-9dbij.mongodb.net/test?retryWrites=true&w=majority', 
+mongoose.connect('mongodb+srv://nik3ta:' + process.env.MONGO_ATLAS_PW + '@cluster0-9dbij.mongodb.net/test?retryWrites=true&w=majority', 
 {useMongoClient: true}); // causes mongodb client to be used under the hood
 // mongoose.connect('mongodb+srv://nik3ta:' + process.env.MONGO_ATLAS_PW + '@cluster0-9dbij.mongodb.net/test?retryWrites=true&w=majority') // to make with environment variable
 
