@@ -51,7 +51,7 @@ second arg : use to process requests that pass thru filter
 
 app.use('/tips', tipRoutes);
 
-app.use(process.env.ADMIN_ENDPOINT, adminRoutes);
+app.use('/' + process.env.ADMIN_ENDPOINT, adminRoutes);
 
 /*
 if script has made it to this line that means that previous were not triggered
