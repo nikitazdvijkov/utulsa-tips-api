@@ -8,14 +8,11 @@ mongoose.connect('mongodb+srv://nik3ta:HELLOnik3ta@cluster0-9dbij.mongodb.net/te
 {useMongoClient: true}); // causes mongodb client to be used under the hood
 // mongoose.connect('mongodb+srv://nik3ta:' + process.env.MONGO_ATLAS_PW + '@cluster0-9dbij.mongodb.net/test?retryWrites=true&w=majority') // to make with environment variable
 
-// const productRoutes = require('./api/routes/products'); // dot js file extension implicit
-// const orderRoutes = require('./api/routes/orders');
-
 const tipRoutes = require('./api/routes/tips');
 const adminRoutes = require('./api/routes/nepeykozlenchikomstanish');
 
 // middleware
-// morgan somehow works with NEXT function (see products.js) to log requests to stdout
+// morgan somehow works with NEXT function to log requests to stdout
 app.use(morgan('dev'));
 
 app.use(bodyParser.urlencoded({extended: false})); // pass in object to configure behavior of url parser: will not accept 'extended' - more complex data whatever that means
@@ -42,29 +39,23 @@ app.use((req, res, next) => {
         );
         return res.header(200).json({}); // sends back emtyp object
     }
-    next(); // how the fuck does this next thing work???
+    next(); // how does this next thing work???
 });
 
 /* 
 app.use : middleware that every request is funneled through
-first arg : filter - any request that starts with '/products'
+first arg : filter - any request that starts with '/tips'
 second arg : use to process requests that pass thru filter
 */
 // middleware that forwards requests to appropriate js files 
-
-
-// app.use('/products', productRoutes);
-// app.use('/orders', orderRoutes);
 
 app.use('/tips', tipRoutes);
 
 app.use('/nepeykozlenchikomstanish', adminRoutes);
 
 /*
-if script has made it to this line that means that the previous two 
-(productRoutes and orderRoutes) were not triggered
-because the stuff at the end of the requested URL 
-did not begin with 'products' nor 'orders'. 
+if script has made it to this line that means that previous were not triggered
+because requested URL did not match endpoints
 */
 app.use((req, res, next) => {
     const error = new Error('NOT FOUND!!!');
